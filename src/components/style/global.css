@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,400&family=Overpass&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 35px;
+    background-color: rgb(128, 128, 128);
+    opacity: 50%;
+
+    position: absolute;
+    top: 96%;
+}
+
+.flexContainerRow4 {
+    display: flex;
+    flex-flow: row;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flexContainerColumn2 {
+
+    display: flex;
+    flex-flow: column;
+
+}
+
+.checkBoxContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+
+}
+
+.crossContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.checkBox {
+
+    border-radius: 100%;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgb(128, 128, 128);
+
+}
+
+.todo {
+    font-size: 40px;
+    color: white;
+    letter-spacing: 10px;
+    margin: 0;
+}
+
+.imgStyle {
+    width: 100%;
+    height: 260px;
+}
+
+.imgStyle2 {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.page {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+    bottom: 190px;
+}
+
+
+.itemsLeft {
+    font-size: 13px;
+    text-decoration: none;
+    color: rgb(128, 128, 128);
+}
+
+/*.clr:hover {
+    color: white;
+}*/
+
+.cross {
+    width: 17px;
+    height: 17px;
+    display: none;
+}
+
+.mrg {
+    margin-right: 5px;
+}
+
+a.mrg {
+    color: lightblue;
+}
+
+/*For mobile*/
+@media screen and (max-width: 390px) {
+
+    /*Flex Containers*/
+    .flexContainerRow {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        width: 300px;
+    }
+
+    .flexContainerRow2 {
+        display: flex;
+        flex-flow: row;
+        width: 350px;
+        margin: 30px 0 0 0;
+        background: #25273c;
+        border-radius: 5px;
+
+    }
+
+    .flexContainerRow3 {
+        display: flex;
+        flex-flow: row;
+        width: 350px;
+        background: #25273c;
+        border-radius: 5px;
+
+    }
+
+    .flexContainerRowBottom {
+        display: flex;
+        flex-flow: row;
+        background: #25273c;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        width: 350px;
+    }
+
+    .flexContainerRowBottom2 { /*All active completed*/
+        display: flex;
+        flex-flow: row;
+        background: #25273c;
+        width: 350px;
+        padding: 10px 70px;
+        margin-top: 15px;
+        justify-content: space-around;
+        border-radius: 5px;
+    }
+
+    .flexContainerColumn { /*Container of all elements*/
+
+        display: flex;
+        flex-flow: column;
+        margin: 20px 0 0 0;
+        border-radius: 5px;
+        width: 350px;
+    }
+
+    /*Flex Containers*/
+    .line {
+        background-color: lightgray;
+        height: 1px;
+        opacity: 40%;
+        width: 350px;
+
+    }
+
+    .createTask {
+
+        height: 50px;
+        border: none;
+        outline: none;
+        font-size: 11px;
+        flex-grow: 1;
+        border-radius: 5px;
+        width: 350px;
+
+    }
+
+    .createdTasks {
+        font-size: 13px;
+        height: 50px;
+        width: 350px;
+    }
+
+
+    body {
+        height: 844px;
+        width: 390px;
+    }
+
+    .styling {
+        color: rgb(128, 128, 128);
+        font-size: 15px;
+        margin: 60px 0 0 0;
+    }
+
+}
+
+/*for pc*/
+
+@media screen and (min-width: 391px) {
+
+
+    /*Flex Containers*/
+    .flexContainerRow {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        width: 500px;
+    }
+
+    .flexContainerRow2 {
+        display: flex;
+        flex-flow: row;
+        width: 500px;
+        margin: 30px 0 0 0;
+        background: #25273c;
+        border-radius: 5px;
+
+    }
+
+    .flexContainerRow3 {
+        display: flex;
+        flex-flow: row;
+        width: 500px;
+        background: #25273c;
+        border-radius: 5px;
+
+    }
+
+    .flexContainerRowBottom {
+        display: flex;
+        flex-flow: row;
+        width: 500px;
+        background: #25273c;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: space-around;
+        padding: 15px 0;
+
+    }
+
+    .flexContainerRowBottom2 { /*All active completed*/
+        display: flex;
+        flex-flow: row;
+        background: #25273c;
+        width: 180px;
+        justify-content: space-around;
+    }
+
+    .flexContainerColumn { /*Container of all elements*/
+
+        display: flex;
+        flex-flow: column;
+        margin: 20px 0 0 0;
+        border-radius: 5px;
+
+    }
+
+    /*Flex Containers*/
+    .line {
+        background-color: lightgray;
+        width: 500px;
+        height: 1px;
+        opacity: 40%;
+    }
+
+    .createTask {
+
+        height: 50px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        flex-grow: 1;
+        border-radius: 5px;
+
+    }
+
+    .createdTasks {
+        font-size: 14px;
+        height: 50px;
+
+    }
+
+    body {
+        height: 100%;
+    }
+
+    .styling {
+        color: rgb(128, 128, 128);
+        font-size: 15px;
+        margin: 30px 0 0 0;
+    }
+
+}
+
