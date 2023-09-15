@@ -42,7 +42,7 @@ export default function Project() {
 
         window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
 
-        if (screenWidth <= 390) setIsMobile(true)
+        if (window.innerWidth <= 400) setIsMobile(true)
         else setIsMobile(false)
 
     }, [screenWidth]);
@@ -449,21 +449,21 @@ export default function Project() {
                                 }} className={"checkBox"}></div>
                             </div>
 
-                            <a style={{
+                            <div style={{
                                 textDecoration: checkedState[index] ? "line-through" : "none",
                                 color: checkedState[index] && "gray"
                             }} onMouseEnter={() => mIn2(index)} onMouseLeave={() => mOut2(index)}
-                               href={"localhost:3000"}
-                               className={"createdTasks font flexContainerRow4"}>
+                                 className={"createdTasks font flexContainerRow4"}>
 
                                 <div>{value}</div>
-                                <div className={"crossContainer"}
+                                <div style={{cursor: 'pointer'}}
+                                     className={"crossContainer"}
                                      onClick={() => deleteFromCross(index)}>
                                     <img alt={"cross img"}
                                          style={{display: checkedStateMinAndOut[index] && "block"}}
                                          src={require("../images/icon-cross.png")} className={"cross"}/>
                                 </div>
-                            </a>
+                            </div>
 
                         </div>
                         <div className={"line"}></div>
@@ -476,51 +476,58 @@ export default function Project() {
                 <div style={{backgroundColor: color5}} className={"flexContainerRowBottom"}>
                     <div className={"itemsLeft font"}>{`${itemLeft} items left`}</div>
 
-                    {!isMobile && <div style={{backgroundColor: color5}} className={"flexContainerRowBottom2"}>
-                        <a href={"localhost:3000"} style={{
-                            color: color1
-                        }} id={"All"} onMouseEnter={mIn} onMouseLeave={mOut} onClick={checkListener}
-                           className={"itemsLeft font"}>All
-                        </a>
-                        <a href={"localhost:3000"} style={{
-                            color: color2
-                        }} id={"Active"} onMouseEnter={mIn} onMouseLeave={mOut}
-                           onClick={checkListener}
-                           className={"itemsLeft font"}>Active
-                        </a>
-                        <a href={"localhost:3000"} style={{
-                            color: color3
-                        }} id={"Completed"} onMouseEnter={mIn} onMouseLeave={mOut}
-                           onClick={checkListener}
-                           className={"itemsLeft font"}>Completed
-                        </a>
-                    </div>}
-                    <a style={{color: color6}} onMouseEnter={mIn} onMouseLeave={mOut} href={"localhost:3000"}
-                       id={"clearAll"}
-                       onClick={checkListener} className={"clr itemsLeft font"}>Clear
-                        Completed</a>
+                    {!isMobile &&
+                        <div style={{backgroundColor: color5}} className={"flexContainerRowBottom2"}>
+                            <div style={{
+                                color: color1,
+                                cursor: 'pointer'
+                            }} id={"All"} onMouseEnter={mIn} onMouseLeave={mOut} onClick={checkListener}
+                                 className={"itemsLeft font"}>All
+                            </div>
+                            <div style={{
+                                color: color2,
+                                cursor: 'pointer'
+
+                            }} id={"Active"} onMouseEnter={mIn} onMouseLeave={mOut}
+                                 onClick={checkListener}
+                                 className={"itemsLeft font"}>Active
+                            </div>
+                            <div style={{
+                                color: color3,
+                                cursor: 'pointer'
+
+                            }} id={"Completed"} onMouseEnter={mIn} onMouseLeave={mOut}
+                                 onClick={checkListener}
+                                 className={"itemsLeft font"}>Completed
+                            </div>
+                        </div>}
+                    <div style={{color: color6, cursor: 'pointer'}} onMouseEnter={mIn} onMouseLeave={mOut}
+                         id={"clearAll"}
+                         onClick={checkListener} className={"clr itemsLeft font"}>Clear
+                        Completed
+                    </div>
                 </div>
             </div>
 
 
             {isMobile && <div style={{backgroundColor: color5}} className={"flexContainerRowBottom2"}>
-                <a href={"localhost:3000"} style={{
+                <div style={{
                     color: color1
                 }} id={"All"} onMouseEnter={mIn} onMouseLeave={mOut} onClick={checkListener}
-                   className={"itemsLeft font"}>All
-                </a>
-                <a href={"localhost:3000"} style={{
+                     className={"itemsLeft font"}>All
+                </div>
+                <div style={{
                     color: color2
                 }} id={"Active"} onMouseEnter={mIn} onMouseLeave={mOut}
-                   onClick={checkListener}
-                   className={"itemsLeft font"}>Active
-                </a>
-                <a href={"localhost:3000"} style={{
+                     onClick={checkListener}
+                     className={"itemsLeft font"}>Active
+                </div>
+                <div style={{
                     color: color3
                 }} id={"Completed"} onMouseEnter={mIn} onMouseLeave={mOut}
-                   onClick={checkListener}
-                   className={"itemsLeft font"}>Completed
-                </a>
+                     onClick={checkListener}
+                     className={"itemsLeft font"}>Completed
+                </div>
             </div>}
 
 
@@ -531,16 +538,16 @@ export default function Project() {
         </div>
 
         {/*Footer*/}
-
         {!isMobile && <div
-            className={"flex bottom-0 absolute inset-x-0 py-2 bg-purple-950/75 mt-10 justify-center font text-xs text-white"}>
-            <div className={"mrg "}>Challenge by</div>
-            <a href={"localhost:3000"} className={"mrg"}>Frontend Mentor.</a>
+            className={"flex absolute inset-x-0 py-2 bg-purple-950/75 mt-10 justify-center font text-xs text-white"}>
+            <div className={"mrg"}>Challenge by</div>
+            <div className={"mrg"}>Frontend Mentor.</div>
             <div className={"mrg"}>Coded by</div>
-            <a href={"localhost:3000"} className={"mrg"}>Omer Bircan Sahin</a>
+            <div className={"mrg"}>Omer Bircan Sahin</div>
             <div className={"mrg"}>Here.</div>
         </div>}
 
+
+
     </div>)
 }
-
